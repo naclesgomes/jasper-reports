@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio_de_clientes" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d96fb5f-0ad4-44ff-abd2-e30e039b6455">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="endereco" class="java.lang.String"/>
+	<field name="complemento" class="java.lang.String"/>
+	<field name="telefone" class="java.lang.String"/>
+	<field name="uf" class="java.lang.String"/>
+	<field name="field1" class="java.lang.String"/>
+	<variable name="variable1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="114" y="23" width="310" height="40" uuid="ac88048a-b4e7-47da-805b-aaf9e2d54f59"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DE CLIENTES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement key="NOME" x="0" y="41" width="49" height="20" uuid="ed91f030-bada-4f16-b675-b2d1b3dc7a16"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="ENDERECO" x="114" y="41" width="90" height="20" uuid="2ca03991-7457-4c6b-bd51-7aba8cf0f6bd"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ENDEREÇO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="COMPLEMENTO" x="234" y="41" width="122" height="20" uuid="51b0bcb5-1ca8-4684-b818-59eb5b9f41fe"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPLEMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="TELEFONE" x="388" y="41" width="82" height="20" uuid="28479bc0-4984-4818-b253-75f5e589691f"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEFONE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="UF" x="497" y="41" width="23" height="20" uuid="8170fd0c-6853-462a-80d6-5ad4d9c1f2a8"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UF]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="62" height="20" uuid="abe56c79-4062-467d-84a9-2592b9ab951d"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="0" width="90" height="20" uuid="fb2fb9d6-100e-490c-a823-8d28a233d96b"/>
+				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="0" width="122" height="20" uuid="25bb1a53-9803-4f8a-8ec3-724077230128"/>
+				<textFieldExpression><![CDATA[$F{complemento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="388" y="0" width="82" height="20" uuid="12d1e193-3430-4097-84bb-1861faa09bfe"/>
+				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="497" y="0" width="23" height="20" uuid="eb43dc27-c077-4b3d-81e0-0cea742ef69d"/>
+				<textFieldExpression><![CDATA[$F{uf}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="22" y="25" width="100" height="20" uuid="d6ac7d5a-e5b7-4382-9d4e-6503f51f6d35"/>
+				<textFieldExpression><![CDATA[$F{field1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="25" width="100" height="20" uuid="6a46a43d-44c6-4df4-8bc2-70f0673d50a5"/>
+				<textFieldExpression><![CDATA[$V{variable1}=$F{field1}.get(Calendar.YEAR) +
+$F{field1}.get(Calendar.MONTH) +
+$F{field1}.get(Calendar.DAY_OF_MONTH)]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

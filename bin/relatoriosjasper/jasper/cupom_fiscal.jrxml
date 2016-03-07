@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cupom_fiscal" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c6916172-87cf-4213-93a8-9e02dd0e914b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="garcom" class="java.lang.Object"/>
+	<field name="ordem" class="java.lang.Long"/>
+	<field name="produtos" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="224" y="27" width="100" height="20" uuid="3392dedd-e7f1-4527-9765-329781ae534f"/>
+				<text><![CDATA[teste]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="2" width="100" height="20" uuid="a41236ab-b511-4bb7-a268-2a26db6eccd8"/>
+				<text><![CDATA[field1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="149" y="2" width="100" height="20" uuid="9033569d-95b7-47c7-9ce1-c5c8aade992a"/>
+				<text><![CDATA[ordem]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="22" width="100" height="20" uuid="1261f9d6-d5f0-4158-9554-dc61c82c3687"/>
+				<textFieldExpression><![CDATA[$F{garcom}.getNome()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="41" width="100" height="20" uuid="91a098bf-0ea4-4c4e-9432-f87dd634a036"/>
+				<textFieldExpression><![CDATA[$F{garcom}.getId()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="149" y="41" width="100" height="20" uuid="19c70553-9e45-445c-90af-e7657d810f8a"/>
+				<textFieldExpression><![CDATA[$F{ordem}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="32" width="100" height="20" uuid="0cc65cee-3860-4ee8-93e8-d851d5c4835d"/>
+				<textFieldExpression><![CDATA[$F{produtos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
