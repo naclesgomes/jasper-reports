@@ -23,6 +23,7 @@ public class CupomFiscalRelatorioTest {
 			cupomFiscal.setData(Calendar.getInstance());
 			cupomFiscal.setGarcom(newGarcom());
 			cupomFiscal.setProdutos(newProdutos());
+			cupomFiscal.getTotal();
 
 			listCupomFiscal.add(cupomFiscal);
 			new ImprimirRelatorios().imprimir("cupom_fiscal.jrxml",

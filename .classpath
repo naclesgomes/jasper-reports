@@ -6,10 +6,11 @@
 	<classpathentry kind="lib" path="/home/jasper01/Downloads/jars/JasperReport/commons-collections-3.1.jar"/>
 	<classpathentry kind="lib" path="/home/jasper01/Downloads/jars/JasperReport/commons-digester-1.7.jar"/>
 	<classpathentry kind="lib" path="/home/jasper01/Downloads/jars/JasperReport/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="/home/jasper01/Downloads/jars/JasperReport/groovy-all-1.5.3.jar"/>
 	<classpathentry kind="lib" path="/home/jasper01/Downloads/jars/JasperReport/itext-2.1.7.jar"/>
 	<classpathentry kind="lib" path="/home/jasper01/Downloads/jars/JasperReport/jasperreports-5.5.1.jar"/>
 	<classpathentry kind="lib" path="/home/jasper01/Downloads/jars/JasperReport/poi-3.9.jar"/>
 	<classpathentry kind="lib" path="/home/jasper01/Downloads/jars/JasperReport/servlet-api-2.4.jar"/>
+	<classpathentry kind="lib" path="/home/jasper01/Downloads/groovy-all-2.0.1.jar"/>
+	<classpathentry kind="lib" path="/home/jasper01/Downloads/barbecue-1.5-beta1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

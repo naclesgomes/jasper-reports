@@ -1,12 +1,13 @@
 package relatoriosjasper.model;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class CupomFiscalProduto {
 
 	private Produto produto;
 	private BigDecimal quantidade;
-	private BigDecimal total;
+	private BigDecimal subtotal;
 
 	public Produto getProduto() {
 		return produto;
@@ -17,14 +18,14 @@ public class CupomFiscalProduto {
 	}
 
 	public BigDecimal getQuantidade() {
-		return quantidade;
+		return quantidade.setScale(4);
 	}
 
 	public void setQuantidade(BigDecimal quantidade) {
 		this.quantidade = quantidade;
 	}
 
-	public BigDecimal getTotal() {
+	public BigDecimal getSubtotal() {
 		if (produto.getPreco() == null
 				|| produto.getPreco().compareTo(BigDecimal.ZERO) == 0) {
 			return BigDecimal.ZERO;
@@ -34,6 +35,7 @@ public class CupomFiscalProduto {
 			return BigDecimal.ZERO;
 		}
 
-		return produto.getPreco().multiply(getQuantidade());
+		return produto.getPreco().multiply(getQuantidade())
+				.setScale(2, RoundingMode.CEILING);
 	}
 }

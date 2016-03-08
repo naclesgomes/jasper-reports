@@ -1,64 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cupom_fiscal" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c6916172-87cf-4213-93a8-9e02dd0e914b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cupom_fiscal" language="groovy" pageWidth="380" pageHeight="792" columnWidth="340" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c6916172-87cf-4213-93a8-9e02dd0e914b">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="95"/>
+	<subDataset name="dataset1" uuid="7f7a19ed-9962-4553-9ec1-be11c3882371"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/jasper01/workspace/relatoriosjasper/src/relatoriosjasper/jasper/"]]></defaultValueExpression>
+	</parameter>
 	<field name="garcom" class="java.lang.Object"/>
 	<field name="ordem" class="java.lang.Long"/>
 	<field name="produtos" class="java.lang.Object"/>
+	<field name="data" class="java.lang.Object"/>
+	<field name="total" class="java.math.BigDecimal"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="66" splitType="Stretch">
 			<staticText>
-				<reportElement x="224" y="27" width="100" height="20" uuid="3392dedd-e7f1-4527-9765-329781ae534f"/>
-				<text><![CDATA[teste]]></text>
+				<reportElement x="10" y="24" width="285" height="19" uuid="3392dedd-e7f1-4527-9765-329781ae534f"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[DOCUMENTO AUXILIAR DE VENDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="5" width="331" height="19" uuid="c226e5c1-ef7e-4e87-92bd-a78413613e97"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[-------------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="43" width="331" height="19" uuid="734fd6a3-0da9-4497-8245-61c75efff92d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[-------------------------------------------------------------------]]></text>
 			</staticText>
 		</band>
 	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch">
-			<staticText>
-				<reportElement x="2" y="2" width="100" height="20" uuid="a41236ab-b511-4bb7-a268-2a26db6eccd8"/>
-				<text><![CDATA[field1]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="149" y="2" width="100" height="20" uuid="9033569d-95b7-47c7-9ce1-c5c8aade992a"/>
-				<text><![CDATA[ordem]]></text>
-			</staticText>
+		<band height="69" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="22" width="100" height="20" uuid="1261f9d6-d5f0-4158-9554-dc61c82c3687"/>
+				<reportElement x="84" y="21" width="101" height="18" uuid="1261f9d6-d5f0-4158-9554-dc61c82c3687"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{garcom}.getNome()]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="41" width="100" height="20" uuid="91a098bf-0ea4-4c4e-9432-f87dd634a036"/>
-				<textFieldExpression><![CDATA[$F{garcom}.getId()]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="149" y="41" width="100" height="20" uuid="19c70553-9e45-445c-90af-e7657d810f8a"/>
+				<reportElement x="84" y="1" width="101" height="20" uuid="19c70553-9e45-445c-90af-e7657d810f8a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{ordem}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="10" y="2" width="59" height="19" uuid="7dd022e4-220c-4afe-9fbf-ce1fe572bbbf"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ORDEM:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="20" width="72" height="28" uuid="bac31170-01d1-46c6-9aa9-895fed710ae9"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[GARÇOM:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="194" y="21" width="46" height="18" uuid="8067ba28-d1a6-40d1-92b9-43b8579da931"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[DATA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="240" y="21" width="101" height="20" uuid="8e33a3e9-64d0-474b-a790-62465589c461"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data}.get(Calendar.YEAR) + "/" +
+($F{data}.get(Calendar.MONTH) < 10 ? ("0" + $F{data}.get(Calendar.MONTH)) : $F{data}.get(Calendar.MONTH)) + "/" +
+($F{data}.get(Calendar.DAY_OF_MONTH) < 10 ? ("0" + $F{data}.get(Calendar.DAY_OF_MONTH)) : $F{data}.get(Calendar.DAY_OF_MONTH))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="49" width="331" height="19" uuid="fa98fd7e-bdf6-42ca-8f28-760bfcbd2495"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[-------------------------------------------------------------------]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
-			<textField>
-				<reportElement x="0" y="32" width="100" height="20" uuid="0cc65cee-3860-4ee8-93e8-d851d5c4835d"/>
-				<textFieldExpression><![CDATA[$F{produtos}.getQuantidade()]]></textFieldExpression>
-			</textField>
+		<band height="50" splitType="Prevent">
+			<subreport>
+				<reportElement x="10" y="4" width="331" height="41" uuid="b21a98dc-20b5-4e27-baba-f0591c44b3c8"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{produtos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "cupom_fiscal_produtos.jasper"]]></subreportExpression>
+			</subreport>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="58" splitType="Prevent">
+			<staticText>
+				<reportElement x="10" y="0" width="331" height="19" uuid="9a6b2be2-68a1-4939-b766-76ed778c970c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[-------------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="181" y="19" width="59" height="19" uuid="384493bd-8829-4410-a0dd-4fb1f73af09d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[TOTAL:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="241" y="19" width="100" height="20" uuid="94ffcf58-1178-4ba7-9190-874d89dabffc"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R\$ " + $F{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="38" width="331" height="19" uuid="6bf70c32-c919-49d2-a8f7-8139bf43f193"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[-------------------------------------------------------------------]]></text>
+			</staticText>
+		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="153" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="230" height="19" uuid="58c00a7b-f856-4705-a4ea-aafade8745e3"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[NÃO É DOCUMENTO FISCAL]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="10" y="30" width="285" height="29" uuid="b4a9609a-db9e-49d7-9e78-a5756b63ecc1"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="USPS" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{ordem}.toString()]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<textField>
+				<reportElement x="139" y="59" width="101" height="20" uuid="c8e41f5e-2935-46f5-ac3d-15607a71de02"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ordem}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="79" width="331" height="19" uuid="6c328dcb-f125-4a20-9c95-4e104694f405"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[-------------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="98" width="330" height="19" uuid="39504fd3-2ff4-4c43-8f3d-cce6608ba1ce"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[CONSULTE O CARDÁPIO NO NOSSO SITE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="133" width="330" height="19" uuid="af888b1d-e111-45d0-b7cd-3b95e5ac0e02"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[WWW.NONOMIQUELE.COM.BR/CPQD]]></text>
+			</staticText>
+		</band>
 	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>
